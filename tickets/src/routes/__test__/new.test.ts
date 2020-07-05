@@ -53,9 +53,12 @@ it("creates a ticket with valid inputs", async () => {
   expect(tickets.length).toEqual(0);
   await request(app)
     .post("/api/tickets")
+    .set("Cookie", global.signin())
     .send({
       title: "title",
       price: 20,
     })
     .expect(201);
+  tickets = await Ticket.find({});
+  expect(tickets.length).toEqual(1);
 });
