@@ -38,7 +38,7 @@ afterAll(async () => {
 global.signin = () => {
   // Build a jsonwebtoken payload {id, email}
   const payload = {
-    id: "bobloblaw",
+    id: new mongoose.Types.ObjectId().toHexString(),
     email: "test@test.com",
   };
 
