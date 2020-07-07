@@ -33,7 +33,7 @@ spec:
             ]
 ---
 apiVersion: v1
-kind: Serice
+kind: Service
 metadata:
   name: nats-srv
 spec:
